@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <title>塗鴉板</title>
+    <style>
+        body {
+            padding: 30px; /* 內距 */
+        }
+        h1 {
+            text-align: center; /* 文字置中 */
+        }
+        canvas {
+            border: 3px solid #aaa; /* 邊框樣式 */
+            border-radius: 25px; /* 圓角 25px 能讓元件變成圓形，等同於寫 20px */
+            margin: auto;
+            display: block;
+        }
+        .colors-picker {
+            display: flex; /* 彈性盒子佈局 */
+            justify-content: center; /* 內容物水平置中 */
+        }
+        .circle {
+            width: 30px;
+            height: 30px;
+            margin: 10px; /* 向上下左右推擠 10px */
+            border: 3px solid #aaa; /* 邊框樣式 */
+            border-radius: 50%; /* 1.圓角 50% 能讓元件變成圓形，等同於寫 20px */
+            cursor: pointer; /* 2.滑鼠移上去時，鼠標切換成手指樣式 */
+        }
+        .circle:hover {
+            opacity: 0.7; /* :hover 滑鼠碰到時透明度變成 0.7 */
+        }
+        .circle:active {
+            opacity: 0.4; /* :active 滑鼠按下觸發時透明度變成 0.4 */
+        }
+        .bg-red {
+            background-color: red;
+        }
+        .bg-green {
+            background-color: green;
+        }
+        .bg-blue {
+            background-color: blue;
+        }
+        .bg-black {
+            background-color: black;
+        }
+        .bg-white {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>我的塗鴉牆</h1>
+
+    <canvas width="600" height="400" onmousedown="mouseDown();" onmouseup="mouseUp();" onmousemove="monuseMove(event);"></canvas>
+
+    <div class="colors-picker">
+        <div class="circle bg-red" onclick="setColor('red');"></div>
+        <div class="circle bg-green" onclick="setColor('green');"></div>
+        <div class="circle bg-blue" onclick="setColor('blue');"></div>
+        <div class="circle bg-black" onclick="setColor('black');"></div>
+        <div class="circle bg-white" onclick="setColor('white');"></div>
+    </div>
+
+    <script>
+        let canvasDOM = document.querySelector('canvas'); //取得畫布元件
+        let ctx = canvasDOM.getContext('2d'); //4. 畫布的畫筆
+        let active = false; //紀錄畫筆是否被按下
+        let size = 15;
+
+        // ctx.lineWidth = 20;
+
+        // 滑鼠在畫布上按下，將 active 設為 true
+        function mouseDown () {
+            active = true;
+        }
+
+        // 滑鼠在畫布上放開，將 active 設為 false
+        function mouseUp () {
+            active = false;
+        }
+
+        // 滑鼠在畫布上移動
+        function monuseMove(event) {
+            if (active) { // 滑鼠是否按下
+
+                // event 作為參數傳入函式帶有相關事件的資訊，例如 offsetX, offsetY 就可以取的相對畫布的座標
+                // ctx.fillRect(event.offsetX, event.offsetY, size, size);
+                ctx.beginPath();
+                ctx.arc(event.offsetX, event.offsetY, size, 0, 2*Math.PI);
+                ctx.fill();
+            }
+        }
+
+        // 設定畫筆顏色
+        function setColor (color) {
+            ctx.fillStyle = color;
+            if (color === "white")
+                size *= 6;
+            else
+                size = 15;
+        }
+    </script>
+</body>
+
+</html>

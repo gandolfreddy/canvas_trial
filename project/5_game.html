@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迷你賽車</title>
+</head>
+<body>
+    <!-- 遊戲場景寬高 640, 480 -->
+    <canvas id="stage" width="640" height="480"></canvas>
+
+    <!-- 載入遊戲引擎 -->
+    <script src="./assets_cars/engine.js"></script>
+    
+    <script src="./game.js">
+        // let game = Engine('stage'); // 傳入畫布元素的 ID
+        // game.start();
+
+        // // 設定背景：
+        // game.setBackdrop('./assets/bg.jpeg');
+
+        // // 播放音檔：
+        // game.sound.play('./assets/bgm.mp3');
+
+        // 創建兩個角色，存在兩個變數中：
+        // let earth = game.createSprite('./assets/earth.png');
+        // let koding = game.createSprite('./assets/koding.png');
+
+        // 設定「earth」角色的座標：
+        // earth.x = 50;
+        // earth.y = 440;
+
+        // 設定「earth」及「koding」角色的大小：
+        // earth.scale = 0.3;  // 設定為原本圖片的 0.3 倍
+        // koding.scale = 0.4; // 設定為原本圖片的 0.4 倍
+
+        // 不停地執行...
+        // game.forever(function(){
+        //     // koding 逆時針旋轉 0.1 度：
+        //     koding.direction -= 0.1;
+        //     // koding 往前移動 0.6 點：
+        //     koding.stepForward(0.6);
+        //     // koding 從邊緣彈開：
+        //     koding.bounceEdge();
+        //     // earth 順時針旋轉 0.05 度：
+        //     earth.direction += 0.05;
+        // });
+        
+    </script>
+</body>
+</html>
