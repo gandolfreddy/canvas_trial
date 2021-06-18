@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>色票產生器</title>
+
+    <style>
+        h1 {
+            position: fixed; /* 固定元素，不會隨著頁面捲動而改變位置 */
+            top: 50%; /* 距離視窗上邊 50 % 的距離 */
+            left: 50%; /* 距離視窗左邊 50 % 的距離 */
+            transform: translate(-50%, -50%); /* 試著移除看看會花生什麼素情 */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>按下任意按鍵，產生隨機的顏色！</h1>
+
+    <script src="../jquery-3.6.0.js"></script>
+    <script>
+        function randomColor() {
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+
+            // document.querySelector('body').style = `background-color: rgb(${r}, ${g}, ${b});`;
+            $('body').css("background-color", `rgb(${r}, ${g}, ${b})`);
+            // document.querySelector('h1').innerText = `rgb(${r}, ${g}, ${b})`;
+            $('h1').text(`rgb(${r}, ${g}, ${b})`);
+        }
+
+        // document.querySelector('body').addEventListener('keypress', randomColor);
+        $('body').keypress(randomColor);
+    </script>
+</body>
+
+</html>

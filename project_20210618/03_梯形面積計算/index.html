@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <title>梯形面積計算</title>
+
+    <style>
+        button {
+            width: 120px; /* 寬度 */
+            height: 40px; /* 高度 */
+            color: #fff; /* 文字顏色 */
+            background-color: #ff2626; /* 背景顏色 */
+            border-width: 4px; /* 邊框寬度 */
+            border-color: #651f1f; /* 邊框顏色 */
+            border-style: solid; /* 邊框樣式 */
+        }
+    </style>
+</head>
+
+<body>
+    <button id="submit">計算</button>
+
+    <script>
+        function getArea() {
+
+            let a = Number(prompt('上底：'));
+            let b = Number(prompt('下底：'));
+            let c = Number(prompt('高：'));
+
+            let area = (a + b) * c / 2;
+
+            alert('面積為：' + area);
+        }
+
+        document.querySelector('#submit').addEventListener('click', getArea);
+    </script>
+</body>
+
+</html>

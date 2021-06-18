@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <title>BMI 計算器</title>
+
+    <style>
+        input, button {
+            padding: 5px; /* 內距離 */
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    身高<input type="text" id="height" placeholder="身高(cm)">
+    體重<input type="text" id="weight" placeholder="體重(kg)">
+    <button id="submit">計算</button>
+    <p>計算結果：</p>
+
+    <script src="../jquery-3.6.0.js"></script>
+    <script>
+        function getBmi() {
+
+            // value 屬性可以取得輸入框的資料內容
+            let h = document.querySelector('#height').value;
+            let w = document.querySelector('#weight').value;
+
+            h = Number(h) / 100;
+            w = Number(w);
+
+            let bmi = w / (h * h);
+            let result = '計算結果：' + bmi;
+            
+            // innerText 可以設定元素的文字內容
+            // document.querySelector('p').innerText = result;
+            $('p').text(result);
+        }
+
+        // document.querySelector('#submit').addEventListener('click', getBmi);
+        $("#submit").click(getBmi);
+    </script>
+</body>
+
+</html>
