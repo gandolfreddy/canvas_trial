@@ -1,0 +1,91 @@
+body {
+    padding: 30px; /* 設定整個網頁的內距 */
+    background-color: #f7f7f7; /* 設定整個網頁背景色 */
+    font-family: Arial, sans-serif; /* 設定整個網頁的字體 */
+}
+
+#app {
+    width: 370px;
+    margin: auto; /* margin 屬性經常用來向其他元素推擠，設定為 auto 就會將自己推到中間 */
+}
+
+.title {
+    padding: 15px; /* 內距 15px */
+    color: #fff;
+    background-color: #de3f53;
+    margin: 0; /* 移除 h2 預設的 margin，試著移除看看會發生什麼事情 */
+    border-radius: 15px 15px 0px 0px; /* 加上圓角 */
+}
+
+.item {
+    display: flex; /* 使用 flex 來做內容的佈局 */
+    align-items: center; /* 使用 flex 佈局可以設定這個屬性，讓內容物垂直置中 */
+    padding: 20px;
+    border-bottom: 1px solid #1c2340; /* 下邊框 1px 寬實心 */
+    color: #cbccdd;
+    background-color: #262e4c;
+    cursor: pointer; /* 滑鼠滑上去呈現手指符號 */
+}
+
+/* 當 .item 元素被滑鼠覆蓋時變換背景顏色 */
+.item:hover {
+    background-color: #2a3353;
+}
+
+/* 當 .item 元素被滑鼠覆蓋時 */
+.item:hover .item-delete {
+    display: block; /* 預設是 none 覆蓋時改為 block 刪除按鈕就會出現 */
+}
+
+.item-text {
+    margin-left: 20px; /* 向左推 20px 遠離 checkbox */
+    margin-right: auto;
+}
+
+.item-checkbox {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 5px solid #404a6e;
+    background-color: #404a6e;
+}
+
+.item-delete {
+    display: none; /* 設為 none 此元素就會被隱藏 */
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border-width: 0; /* 移除按鈕預設的邊框 */
+    font-weight: 900;
+    cursor: pointer;
+    color: #fff;
+    background-color: #de3f53;
+}
+
+/* 刪除按鈕被滑鼠覆蓋時，對調背景和文字顏色 */
+.item-delete:hover {
+    color: #de3f53;
+    background-color: #fff;
+}
+
+/* 元素同時有 item 和 dome 兩個類別時，其底下的 .item-checkbox 背景變顏色 */
+.item.done .item-checkbox {
+    background-color: #7882a5;
+}
+
+/* 元素同時有 item 和 dome 兩個類別時，其底下的 .item-text 文字變顏色 */
+.item.done .item-text {
+    color:#8284a3;
+    text-decoration: line-through;
+}
+
+input {
+    width: 100%;
+    padding: 20px;
+    border-width: 0; /* 移除輸入框預設邊框樣式 */
+    color: #fff;
+    background-color: #171d37;
+    outline: none; /* 當輸入被點擊時，移除預設的邊框 */
+    box-sizing: border-box;
+    border-radius: 0px 0px 15px 15px; /* 加上圓角 */
+}
