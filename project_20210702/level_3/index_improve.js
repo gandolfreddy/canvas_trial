@@ -5,10 +5,9 @@ let isReview = false; //是否進入檢討模式
 function renderQuiz() {
 
     resetOptionColor(); //重置選項的顏色
-    if (index >= myAnswers.length || !myAnswers[index])
-        isReview = false;
-    if (myAnswers[index])
-        isReview = true;
+    isReview = (myAnswers[index]) ? true : false;
+    console.log(myAnswers);
+    console.log(isReview);
 
 
     let q = data[index]; //根據 index 數值取出對應的題目
@@ -23,9 +22,9 @@ function renderQuiz() {
     let myOption = myAnswers[index];
 
     //如果進入檢討模式，就顯示正確與錯誤
+    $('.js-success, .js-fail').hide();
     if (isReview) {
         $('.js-submit').hide();
-        $('.js-success, .js-fail').hide();
         if (myOption == q.answer) { //如果選取的選項和正確答案一樣時
             $('#' + myOption).addClass('text-white bg-success'); //選取按鈕變綠色
             $('.js-success').show();
@@ -36,7 +35,6 @@ function renderQuiz() {
         }
     } else {
         $('.js-submit').show();
-        $('.js-success, .js-fail').hide();
         $('#' + myOption).addClass('text-white bg-warning'); //選取的按鈕變橘黃色
     }
 }
@@ -52,11 +50,8 @@ function clickOnOption() {
 
 function next() {
     if (index < data.length - 1) {
-        if (!isReview) {
+        if (!isReview)
             myAnswers[index] = null;
-            if (index + 1 == myAnswers.length)
-                myAnswers.pop();
-        }
         index += 1; //題號加 1
         renderQuiz(); //根據 index 題號更新題目內容
     } else {
@@ -66,11 +61,8 @@ function next() {
 
 function prev() {
     if (index > 0) {
-        if (!isReview) {
+        if (!isReview)
             myAnswers[index] = null;
-            if (index + 1 == myAnswers.length)
-                myAnswers.pop();
-        }
         index -= 1; //題號減 1
         renderQuiz(); //根據 index 題號更新題目內容
     } else {
