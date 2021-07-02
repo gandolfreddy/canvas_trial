@@ -17,3 +17,8 @@
 2. 待辦清單 level_2
 3. 待辦清單 level_3
 4. 待辦清單 level_4
+
+於 [project_20210702](https://github.com/gandolfreddy/web_trial/tree/main/project_20210702) 目錄，收錄於 2021/07/02 內訓之作業內容，分別為：
+1. 測驗平台 level_1
+2. 測驗平台 level_2
+3. 測驗平台 level_3
