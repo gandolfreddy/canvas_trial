@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Level 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #474242;
+        }
+        
+        #app {
+            width: 600px;
+        }
+        
+        .options>div {
+            background-color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="p-4">
+    <div id="app" class="p-2 mx-auto">
+        <div class="shadow-sm bg-body p-3 mb-3 rounded">
+            <h2 id="title">這裡是題目敘述</h2>
+            <pre id="description" class="mb-0"></pre>
+        </div>
+
+        <div class="options">
+            <div id="a" class="shadow-sm p-3 mb-2 rounded js-option">A. 10</div>
+            <div id="b" class="shadow-sm p-3 mb-2 rounded js-option">B. 10</div>
+            <div id="c" class="shadow-sm p-3 mb-2 rounded js-option">C. 10</div>
+            <div id="d" class="shadow-sm p-3 mb-2 rounded js-option">D. 10</div>
+        </div>
+
+        <div class="my-3">
+            <button class="btn btn-primary js-prev">上一題</button>
+            <button class="btn btn-primary js-next">下一題</button>
+            <button class="btn btn-danger js-submit">提交考卷</button>
+        </div>
+
+        <div>
+            <div class="alert alert-success js-success">你答對了！</div>
+            <div class="alert alert-danger js-fail">你答錯了！</div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="data.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

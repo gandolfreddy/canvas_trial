@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Level 1</title>
+
+    <!-- 在這裏我們載入 bootstrap 套件提供給我們的樣式 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #474242;
+        }
+        
+        #app {
+            width: 600px;
+        }
+        
+        .options>div {
+            background-color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="p-4">
+    <div id="app" class="p-2 mx-auto">
+        <div class="shadow-sm bg-body p-3 mb-3 rounded">
+            <h2 id="title">第 1 題 - 輸入與輸出</h2>
+            <pre id="description" class="mb-0">
+小明用網頁搭配 JS 寫了一隻程式來做簡單的加法計算，這隻程式如下，
+請問執行此程式，並輸入 30, 50 請問跳出什麼訊息？
+
+let a = prompt('加數：');
+let b = prompt('被加數：');
+
+let c = a + b;
+alert('總和：' + c);
+            </pre>
+        </div>
+
+        <div class="options mb-3">
+            <div class="shadow-sm p-3 mb-2 rounded">(A) 30</div>
+            <div class="shadow-sm p-3 mb-2 rounded">(B) 80</div>
+            <div class="shadow-sm p-3 mb-2 rounded">(C) 3080</div>
+            <div class="shadow-sm p-3 mb-2 rounded">(D) 程式會出現執行錯誤</div>
+        </div>
+
+        <div>
+            <button class="btn btn-primary">上一題</button>
+            <button class="btn btn-primary">下一題</button>
+            <button class="btn btn-danger">提交考卷</button>
+        </div>
+    </div>
+</body>
+
+</html>
