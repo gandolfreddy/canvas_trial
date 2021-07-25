@@ -22,3 +22,6 @@
 1. 測驗平台 level_1
 2. 測驗平台 level_2
 3. 測驗平台 level_3
+
+於 [project_20210723](https://github.com/gandolfreddy/web_trial/tree/main/project_20210723) 目錄，收錄於 2021/07/23 內訓之作業內容，分別為：
+1. index.html（橘子蘋果官網）
